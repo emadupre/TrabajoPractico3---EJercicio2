@@ -162,11 +162,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         try {
           temperatura = Double.parseDouble(texto);
           if(btnrCel.isSelected()){
-            JOptionPane.showMessageDialog(this, "La temperatura en celsius es: " + temperatura);
+            JOptionPane.showMessageDialog(this, "La temperatura en Celsius es: " + temperatura);
         } else if (btnrRad.isSelected()){
-            JOptionPane.showMessageDialog(this, "La temperatura en radianes es: " + temperatura);
+            JOptionPane.showMessageDialog(this, "La temperatura en Radianes es: " + temperatura);
+        } else if (btnrFah.isSelected()){
+            double fahrenheit = temperatura * 9 / 5 + 32;
+            JOptionPane.showMessageDialog(this, "La temperatura en Fahrenheit es: " + fahrenheit);
+        } else if (btnrKel.isSelected()){
+            double kelvin = temperatura + 273.15;
+            JOptionPane.showMessageDialog(this, "La temperatura en Kelvin es: " + kelvin);
         }
-        } catch (NumberFormatException e){
+        }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(this, "El formato es incorrecto");
         } 
             
