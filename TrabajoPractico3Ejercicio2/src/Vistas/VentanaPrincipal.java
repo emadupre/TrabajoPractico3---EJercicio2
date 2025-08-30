@@ -161,15 +161,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         double temperatura = 0;
         try {
           temperatura = Double.parseDouble(texto);
-        } catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "El formato es incorrecto");
-        } 
-            
-        if(btnrCel.isSelected()){
+          if(btnrCel.isSelected()){
             JOptionPane.showMessageDialog(this, "La temperatura en celsius es: " + temperatura);
         } else if (btnrRad.isSelected()){
             JOptionPane.showMessageDialog(this, "La temperatura en radianes es: " + temperatura);
         }
+        } catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "El formato es incorrecto");
+        } 
+            
+        
         
         
         
