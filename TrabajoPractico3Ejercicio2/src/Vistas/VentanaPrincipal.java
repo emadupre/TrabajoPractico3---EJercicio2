@@ -6,6 +6,7 @@
 package Vistas;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -155,9 +156,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
+        JTextField miTexto = new JTextField();
+        String texto = miTexto.getText();
+        double temperatura = 0;
+        try {
+          temperatura = Double.parseDouble(texto);
+        } catch (RuntimeException e){
+            JOptionPane.showMessageDialog(this, "El formato es incorrecto");
+        } 
+            
+        
         if(btnrCel.isSelected()){
-            JOptionPane.showMessageDialog(this, "La temperatura en celsius es " + txtTemperatura);
+            JOptionPane.showMessageDialog(this, "La temperatura en celsius es " + temperatura);
         }
+        
     }//GEN-LAST:event_btnConvertirActionPerformed
 
     /**
