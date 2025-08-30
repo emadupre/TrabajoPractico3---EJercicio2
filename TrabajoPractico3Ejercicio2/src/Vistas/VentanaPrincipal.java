@@ -5,6 +5,8 @@
  */
 package Vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Enzo_2
@@ -27,13 +29,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
-        buttonGroup5 = new javax.swing.ButtonGroup();
+        btnGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lblOrden = new javax.swing.JLabel();
         txtTemperatura = new javax.swing.JTextField();
@@ -45,15 +41,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnrKel = new javax.swing.JRadioButton();
         btnrRad = new javax.swing.JRadioButton();
 
-        jRadioButton2.setText("jRadioButton2");
-
-        jRadioButton1.setText("jRadioButton1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblOrden.setText("Ingrese la temperatura en grados");
+        lblOrden.setText("Ingrese la temperatura en grados celsius");
 
         btnConvertir.setText("Convertir");
+        btnConvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConvertirActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -77,16 +74,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        buttonGroup1.add(btnrFah);
+        btnGroup1.add(btnrFah);
         btnrFah.setText("A Fahrenheit ");
 
-        buttonGroup2.add(btnrCel);
+        btnGroup1.add(btnrCel);
         btnrCel.setText("A Celsius");
 
-        buttonGroup3.add(btnrKel);
+        btnGroup1.add(btnrKel);
         btnrKel.setText("A Kelvin");
 
-        buttonGroup4.add(btnrRad);
+        btnGroup1.add(btnrRad);
         btnrRad.setText("A Radianes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -94,10 +91,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -109,15 +103,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblOrden)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
+                                .addGap(37, 37, 37)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnrFah)
-                                    .addComponent(btnrKel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnrCel)
-                                    .addComponent(btnrRad))
-                                .addGap(60, 60, 60)))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnrKel)
+                                        .addGap(47, 47, 47)
+                                        .addComponent(btnrRad))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnrFah)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnrCel))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -129,17 +127,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(lblOrden)
                 .addGap(12, 12, 12)
                 .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnrFah)
                     .addComponent(btnrCel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnrKel)
-                    .addComponent(btnrRad))
-                .addGap(38, 38, 38)
+                    .addComponent(btnrRad)
+                    .addComponent(btnrKel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,6 +153,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
+        if(btnrCel.isSelected()){
+            JOptionPane.showMessageDialog(this, "La temperatura en celsius es " + txtTemperatura);
+        }
+    }//GEN-LAST:event_btnConvertirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,19 +197,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConvertir;
+    private javax.swing.ButtonGroup btnGroup1;
     private javax.swing.JRadioButton btnrCel;
     private javax.swing.JRadioButton btnrFah;
     private javax.swing.JRadioButton btnrKel;
     private javax.swing.JRadioButton btnrRad;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.ButtonGroup buttonGroup5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JLabel lblOrden;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtTemperatura;
