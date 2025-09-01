@@ -43,7 +43,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnrRad = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ENZO PONELE TITULO");
+        setTitle("Ejercicio 2 - De Celcius a Farenheit");
 
         lblOrden.setText("Ingrese la temperatura en grados celsius");
 
